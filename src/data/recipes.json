@@ -4,27 +4,69 @@
     "image": "/images/spaghetti-carbonara.png",
     "cuisineType": ["Italian"],
     "mealType": ["Lunch", "Dinner"],
-    "ingredients": ["Spaghetti", "Eggs", "Bacon", "Parmesan Cheese"],
+    "ingredients": [
+      "100g pancetta",
+      "50g pecorino cheese",
+      "50g parmesan",
+      "3 large eggs",
+      "350g spaghetti"
+    ],
     "healthLabels": ["Vegetarian"],
-    "url": "https://example.com/spaghetti-carbonara-recipe"
+    "method": [
+      "Step 1: Cook spaghetti until al dente.",
+      "Step 2: Fry pancetta until crispy.",
+      "Step 3: Mix eggs, cheese, and black pepper.",
+      "Step 4: Drain spaghetti and combine with pancetta.",
+      "Step 5: Stir in egg mixture quickly.",
+      "Step 6: Add pasta water if needed for creaminess.",
+      "Step 7: Serve with extra cheese and black pepper."
+    ]
   },
   {
     "label": "Chicken Tacos",
     "image": "/images/chicken-tacos.png",
     "cuisineType": ["Mexican"],
     "mealType": ["Lunch", "Dinner"],
-    "ingredients": ["Chicken", "Tortillas", "Tomatoes", "Lettuce", "Cheese"],
+    "ingredients": [
+      "Chicken",
+      "Tortillas",
+      "Tomatoes",
+      "Lettuce",
+      "Cheese"
+    ],
     "healthLabels": ["Non-Veg"],
-    "url": "https://example.com/chicken-tacos-recipe"
+    "method": [
+      "Step 1: Cook the chicken.",
+      "Step 2: Prepare the tortillas.",
+      "Step 3: Slice the tomatoes and lettuce.",
+      "Step 4: Assemble the tacos with chicken, tomatoes, lettuce, and cheese.",
+      "Step 5: Serve and enjoy!",
+      "Step 6: Add your favorite hot sauce for extra flavor.",
+      "Step 7: Optionally, garnish with cilantro and lime wedges.",
+      "Step 8: Pair with a side of guacamole and chips for a complete meal."
+    ]
   },
   {
     "label": "Vegan Stir-Fry",
     "image": "/images/vegan-stir-fry.png",
     "cuisineType": ["Asian"],
     "mealType": ["Dinner"],
-    "ingredients": ["Tofu", "Broccoli", "Carrots", "Soy Sauce"],
+    "ingredients": [
+      "Tofu",
+      "Broccoli",
+      "Carrots",
+      "Soy Sauce"
+    ],
     "healthLabels": ["Vegan", "Gluten-Free"],
-    "url": "https://example.com/vegan-stir-fry-recipe"
+    "method": [
+      "Step 1: Cube the tofu and prepare the vegetables.",
+      "Step 2: Heat a pan and stir-fry the tofu and vegetables with soy sauce.",
+      "Step 3: Serve the vegan stir-fry.",
+      "Step 4: Optionally, sprinkle sesame seeds on top for added texture.",
+      "Step 5: Garnish with green onions for extra flavor.",
+      "Step 6: Pair with steamed rice or noodles for a complete meal.",
+      "Step 7: Enjoy your homemade vegan stir-fry!"
+    ]
   },
   {
     "label": "Apple",
@@ -33,7 +75,12 @@
     "mealType": ["Snack"],
     "ingredients": ["Apple"],
     "healthLabels": ["Vegan", "Fruit"],
-    "url": "https://example.com/apple-recipe"
+    "method": [
+      "Step 1: Wash and slice the apple.",
+      "Step 2: Enjoy the apple slices as a healthy snack.",
+      "Step 3: Optionally, dip the apple slices in peanut butter for a tasty twist.",
+      "Step 4: Sprinkle a pinch of cinnamon for added flavor."
+    ]
   },
   {
     "label": "Banana",
@@ -42,7 +89,12 @@
     "mealType": ["Snack"],
     "ingredients": ["Banana"],
     "healthLabels": ["Vegan", "Fruit"],
-    "url": "https://example.com/banana-recipe"
+    "method": [
+      "Step 1: Peel the banana.",
+      "Step 2: Slice and enjoy the banana as a quick snack.",
+      "Step 3: Optionally, top with a drizzle of honey for sweetness.",
+      "Step 4: Add a sprinkle of granola for extra crunch."
+    ]
   },
   {
     "label": "Strawberry",
@@ -51,6 +103,11 @@
     "mealType": ["Snack", "Dessert"],
     "ingredients": ["Strawberry"],
     "healthLabels": ["Vegan", "Fruit"],
-    "url": "https://example.com/strawberry-recipe"
+    "method": [
+      "Step 1: Wash and hull the strawberries.",
+      "Step 2: Enjoy the strawberries as a refreshing snack or dessert.",
+      "Step 3: Optionally, dip in melted chocolate for a decadent treat.",
+      "Step 4: Pair with whipped cream for a delightful dessert."
+    ]
   }
 ]
