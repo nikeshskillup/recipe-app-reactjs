@@ -1,0 +1,74 @@
+/* Updated UI Design */
+
+.app {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    /* padding: 20px; */
+  }
+  .app_header{
+    background-color: #000;
+    width: 100%;
+    padding: 20px 0px;
+    text-align: center;
+    color: #fff;
+}
+.app p{
+    margin-top: 30px;
+}
+  .app__searchForm {
+    margin-top: 12px;
+  }
+  
+  .app__input {
+    padding: 10px 20px;
+    min-width: 250px;
+    max-width: 100%;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  
+  .app__submit {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-left: 12px;
+    background-color: #ff5733;
+    border-radius: 6px;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .app__submit:hover {
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .app__recipes {
+    margin-top: 24px;
+    /* display: grid; */
+    grid-template-columns: repeat(3, 1fr); /* Display three recipes in a row */
+    gap: 20px;
+    justify-items: center;
+  }
+  
+  .app__category {
+    padding: 10px 20px;
+    margin: 6px;
+    border-radius:5px;
+    background-color: #ff5733;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .app__category:hover {
+    background-color: #000;
+    color: white;
+  }
+  .recipe-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
