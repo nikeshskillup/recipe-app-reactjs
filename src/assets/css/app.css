@@ -5,14 +5,15 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    background: #F5F5F5;
     /* padding: 20px; */
   }
   .app_header{
-    background-color: #000;
+    background-color: #388E3C;
     width: 100%;
     padding: 20px 0px;
     text-align: center;
-    color: #fff;
+    color: #F7F7F7;
 }
 .app p{
     margin-top: 30px;
@@ -33,7 +34,7 @@
     padding: 10px 20px;
     font-size: 16px;
     margin-left: 12px;
-    background-color: #ff5733;
+    background-color: #4CAF50;
     border-radius: 6px;
     border: none;
     color: white;
@@ -41,7 +42,7 @@
   }
   
   .app__submit:hover {
-    background-color: #000;
+    background-color: #388E3C;
     color: #fff;
     cursor: pointer;
   }
@@ -58,17 +59,21 @@
     padding: 10px 20px;
     margin: 6px;
     border-radius:5px;
-    background-color: #ff5733;
+    background-color: #4CAF50;
     color: white;
     font-weight: bold;
     cursor: pointer;
   }
   
   .app__category:hover {
-    background-color: #000;
+    background-color: #388E3C;
     color: white;
   }
   .recipe-grid{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+  }
+  .linktext{
+    text-decoration: none;
+    color: white;
   }

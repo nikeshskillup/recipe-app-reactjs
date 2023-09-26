@@ -11,6 +11,7 @@
     border-radius: 8px;
     padding: 16px;
     text-align: center;
+    text-decoration: n;
     flex: 1;    /*Allow the tile to grow and occupy equal space in the row */
     margin: 8px; /* Add some spacing between tiles */
     max-width: 300px; /* Set a maximum width to control tile size */
@@ -39,6 +40,8 @@
     font-size: 18px;
     font-weight: bold;
     margin: 0;
+    text-decoration: none !important;
+    color: #000;
   }
   
   .recipeTile__description {

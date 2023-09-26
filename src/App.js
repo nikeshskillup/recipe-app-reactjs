@@ -1,6 +1,10 @@
+// App.js
+
 import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import "./assets/css/app.css";
 import RecipeTile from "./components/RecipeTile";
+import RecipeDetails from "./components/RecipeDetails";
 import recipesData from "./data/recipes.json";
 
 function App() {
@@ -48,50 +52,76 @@ function App() {
   };
 
   return (
-    <div className="app">
-      <div className="app_header">
-        <h1>Food Recipe Plaza 🍔</h1>
-      </div>
-      <p>Search Your Recipe Here:</p>
-      <form className="app__searchForm" onSubmit={onSubmit}>
-        <input
-          className="app__input"
-          type="text"
-          placeholder="enter ingredient"
-          autoComplete="off"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-        />
-        <input className="app__submit" type="submit" value="Search" />
-        <select
-          className="app__category"
-          value={selectedCategory}
-          onChange={(e) => setSelectedCategory(e.target.value)}
-        >
-          {categoryOptions.map((category) => (
-            <option key={category} value={category}>
-              {category}
-            </option>
-          ))}
-        </select>
-      </form>
-      
-      {loading ? (
-        <p>Loading...</p>
-      ) : (
-        <div className="app__recipes">
-          {recipes.length !== 0 ? (
-            <div className="recipe-grid">
-              {recipes.map((recipe) => (
-                <RecipeTile key={recipe.label} recipe={recipe} />
-              ))}
-            </div>
-          ) : (
-            <p>No recipes found.</p>
-          )}
+    <Router>
+      <div className="app">
+        <div className="app_header">
+          <Link to="/" className="linktext">
+            <h1>🍴 Foodie Delights 🍣</h1>
+          </Link>
         </div>
-      )}
-    </div>
+        <p>Search Your Recipe Here:</p>
+        <form className="app__searchForm" onSubmit={onSubmit}>
+          <input
+            className="app__input"
+            type="text"
+            placeholder="enter ingredient"
+            autoComplete="off"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
+          <input className="app__submit" type="submit" value="Search" />
+          <select
+            className="app__category"
+            value={selectedCategory}
+            onChange={(e) => setSelectedCategory(e.target.value)}
+          >
+            {categoryOptions.map((category) => (
+              <option key={category} value={category}>
+                {category}
+              </option>
+            ))}
+          </select>
+        </form>
+        
+        {loading ? (
+          <p>Loading...</p>
+        ) : (
+          <div className="app__recipes">
+            {recipes.length !== 0 ? (
+              <Routes>
+              <Route
+                path="/"
+                element={
+                  <div className="recipe-grid">
+                    {recipes.map((recipe) => (
+                      <Link
+                      className="linktext"
+                        key={recipe.label}
+                        to={`/recipe/${encodeURIComponent(recipe.label)}`}
+                      >
+                        <RecipeTile recipe={recipe} />
+                      </Link>
+                    ))}
+                  </div>
+                }
+              />
+              
+              <Route
+                path="/recipe/:label"
+                element={({ params }) => {
+                  const selectedRecipe = recipes.find((recipe) => recipe.label === decodeURIComponent(params.label));
+                  return <RecipeDetails recipe={selectedRecipe} />;
+                }}
+              />
+            </Routes>
+            
+            ) : (
+              <p>No recipes found.</p>
+            )}
+          </div>
+        )}
+      </div>
+    </Router>
   );
 }
 
