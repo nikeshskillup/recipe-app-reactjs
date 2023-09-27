@@ -12,15 +12,7 @@
       "350g spaghetti"
     ],
     "healthLabels": ["Vegetarian"],
-    "method": [
-      "Step 1: Cook spaghetti until al dente.",
-      "Step 2: Fry pancetta until crispy.",
-      "Step 3: Mix eggs, cheese, and black pepper.",
-      "Step 4: Drain spaghetti and combine with pancetta.",
-      "Step 5: Stir in egg mixture quickly.",
-      "Step 6: Add pasta water if needed for creaminess.",
-      "Step 7: Serve with extra cheese and black pepper."
-    ]
+    "method": "/images/spaghetti-carbonara-recipe.png"
   },
   {
     "label": "Chicken Tacos",
@@ -35,16 +27,7 @@
       "Cheese"
     ],
     "healthLabels": ["Non-Veg"],
-    "method": [
-      "Step 1: Cook the chicken.",
-      "Step 2: Prepare the tortillas.",
-      "Step 3: Slice the tomatoes and lettuce.",
-      "Step 4: Assemble the tacos with chicken, tomatoes, lettuce, and cheese.",
-      "Step 5: Serve and enjoy!",
-      "Step 6: Add your favorite hot sauce for extra flavor.",
-      "Step 7: Optionally, garnish with cilantro and lime wedges.",
-      "Step 8: Pair with a side of guacamole and chips for a complete meal."
-    ]
+    "method": "/images/chicken-tacos-recipe.png"
   },
   {
     "label": "Vegan Stir-Fry",
@@ -58,56 +41,33 @@
       "Soy Sauce"
     ],
     "healthLabels": ["Vegan", "Gluten-Free"],
-    "method": [
-      "Step 1: Cube the tofu and prepare the vegetables.",
-      "Step 2: Heat a pan and stir-fry the tofu and vegetables with soy sauce.",
-      "Step 3: Serve the vegan stir-fry.",
-      "Step 4: Optionally, sprinkle sesame seeds on top for added texture.",
-      "Step 5: Garnish with green onions for extra flavor.",
-      "Step 6: Pair with steamed rice or noodles for a complete meal.",
-      "Step 7: Enjoy your homemade vegan stir-fry!"
-    ]
+    "method": "/images/vegan-stir-fry-recipe.png"
   },
   {
-    "label": "Apple",
+    "label": "Apple Shake",
     "image": "/images/apple.png",
     "cuisineType": ["Fruit"],
     "mealType": ["Snack"],
     "ingredients": ["Apple"],
     "healthLabels": ["Vegan", "Fruit"],
-    "method": [
-      "Step 1: Wash and slice the apple.",
-      "Step 2: Enjoy the apple slices as a healthy snack.",
-      "Step 3: Optionally, dip the apple slices in peanut butter for a tasty twist.",
-      "Step 4: Sprinkle a pinch of cinnamon for added flavor."
-    ]
+    "method": "/images/apple-recipe.png"
   },
   {
-    "label": "Banana",
+    "label": "Banana Shake",
     "image": "/images/banana.png",
     "cuisineType": ["Fruit"],
     "mealType": ["Snack"],
     "ingredients": ["Banana"],
     "healthLabels": ["Vegan", "Fruit"],
-    "method": [
-      "Step 1: Peel the banana.",
-      "Step 2: Slice and enjoy the banana as a quick snack.",
-      "Step 3: Optionally, top with a drizzle of honey for sweetness.",
-      "Step 4: Add a sprinkle of granola for extra crunch."
-    ]
+    "method": "/images/banana-recipe.png"
   },
   {
-    "label": "Strawberry",
+    "label": "Strawberry Shake",
     "image": "/images/strawberry.png",
     "cuisineType": ["Fruit"],
     "mealType": ["Snack", "Dessert"],
     "ingredients": ["Strawberry"],
     "healthLabels": ["Vegan", "Fruit"],
-    "method": [
-      "Step 1: Wash and hull the strawberries.",
-      "Step 2: Enjoy the strawberries as a refreshing snack or dessert.",
-      "Step 3: Optionally, dip in melted chocolate for a decadent treat.",
-      "Step 4: Pair with whipped cream for a delightful dessert."
-    ]
+    "method": "/images/strawberry-recipe.png"
   }
 ]

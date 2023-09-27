@@ -17,7 +17,7 @@ export default function RecipeDetails({ recipe }) {
         </div>
       </div>
       <div className="recipe-details-method">
-        <p>Recipe: {recipe.method}</p>
+      <img src={recipe.method} alt={recipe.label} className="recipe-image"/>
       </div>
     </div>
   );
