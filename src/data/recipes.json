@@ -11,7 +11,7 @@
       "3 large eggs",
       "350g spaghetti"
     ],
-    "healthLabels": ["Vegetarian"],
+    "category": ["Non-Veg"],
     "method": "/images/spaghetti-carbonara-recipe.png"
   },
   {
@@ -26,7 +26,7 @@
       "Lettuce",
       "Cheese"
     ],
-    "healthLabels": ["Non-Veg"],
+    "category": ["Non-Veg"],
     "method": "/images/chicken-tacos-recipe.png"
   },
   {
@@ -40,25 +40,25 @@
       "Carrots",
       "Soy Sauce"
     ],
-    "healthLabels": ["Vegan", "Gluten-Free"],
+    "category": ["Veg"],
     "method": "/images/vegan-stir-fry-recipe.png"
   },
   {
-    "label": "Apple Shake",
+    "label": "Apple Milkshake",
     "image": "/images/apple.png",
     "cuisineType": ["Fruit"],
     "mealType": ["Snack"],
     "ingredients": ["Apple"],
-    "healthLabels": ["Vegan", "Fruit"],
+    "category": ["Fruits Shake"],
     "method": "/images/apple-recipe.png"
   },
   {
-    "label": "Banana Shake",
+    "label": "Banana Smoothie",
     "image": "/images/banana.png",
     "cuisineType": ["Fruit"],
     "mealType": ["Snack"],
     "ingredients": ["Banana"],
-    "healthLabels": ["Vegan", "Fruit"],
+    "category": ["Fruits Shake"],
     "method": "/images/banana-recipe.png"
   },
   {
@@ -67,7 +67,7 @@
     "cuisineType": ["Fruit"],
     "mealType": ["Snack", "Dessert"],
     "ingredients": ["Strawberry"],
-    "healthLabels": ["Vegan", "Fruit"],
+    "category": ["Fruits Shake"],
     "method": "/images/strawberry-recipe.png"
   }
 ]

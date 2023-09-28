@@ -13,7 +13,7 @@ export default function RecipeDetails({ recipe }) {
           <p>Cuisine Type: {recipe.cuisineType.join(", ")}</p>
           <p>Meal Type: {recipe.mealType.join(", ")}</p>
           <p>Ingredients: {recipe.ingredients.join(", ")}</p>
-          <p>Health Labels: {recipe.healthLabels.join(", ")}</p>
+          <p> Category: {recipe.category.join(", ")}</p>
         </div>
       </div>
       <div className="recipe-details-method">

@@ -22,7 +22,7 @@ function App() {
   }, []);
 
   const healthLabelsOptions = Array.from(
-    new Set(recipesData.flatMap((recipe) => recipe.healthLabels))
+    new Set(recipesData.flatMap((recipe) => recipe.category))
   );
 
   const categoryOptions = ["All", ...healthLabelsOptions];
@@ -33,7 +33,7 @@ function App() {
 
     if (selectedCategory !== "All") {
       filteredRecipes = filteredRecipes.filter((recipe) =>
-        recipe.healthLabels.includes(selectedCategory)
+        recipe.category.includes(selectedCategory)
       );
     }
 
@@ -64,7 +64,7 @@ function App() {
           <input
             className="app__input"
             type="text"
-            placeholder="enter ingredient"
+            placeholder="Enter Ingredient"
             autoComplete="off"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
