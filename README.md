@@ -238,7 +238,7 @@ const healthLabelsOptions = Array.from(
 const categoryOptions = ["All", ...healthLabelsOptions];
 ```
 
- 3. Function to Filter Recipes Based on Query and Category
+### 3. Function to Filter Recipes Based on Query and Category
 
 We'll create a function to filter recipes based on the user's input query and selected category. This function creates a copy of the original data, applies filters, and updates the displayed recipes.
 
@@ -273,363 +273,86 @@ const onSubmit = (e) => {
 
 ```
 
+## Step 4: Complete RecipeTile.js
 
+In this step, we will complete the `RecipeTile.js` component to render a recipe tile. This tile will display an image of the recipe along with its label.
 
+### RecipeTile.js
 
-
-## Step 3: Verify Style in `src/App.css` for the UI
-
-Please verify your 'src/app.css' file for the CSS styles. If you cannot find the CSS styles in the file, you can utilize the following code within the 'app.css' file
-
-<details>
-<Summary>Click to view the code</Summary>
-
-```css
-/* App.css */
-
-body {
-  background-color: #f5f5f5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  margin: 0;
-}
-
-.container {
-  text-align: center;
-  font-family: 'Arial, sans-serif';
-  background-color: #f5f5f5;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-}
-
-.appContainer {
-  text-align: center;
-  font-family: 'Arial, sans-serif';
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.heading {
-  font-size: 2.5rem;
-  color: #007bff;
-  margin-bottom: 20px;
-}
-
-.label {
-  display: block;
-  font-size: 1.2rem;
-  margin-bottom: 5px;
-}
-
-.input {
-  width: 90%;
-  padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-
-.unit-dropdown {
-  width: 90%;
-  padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-.unit-option {
-  width: 90%;
-  padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-
-.button {
-  padding: 10px 20px;
-  font-size: 1.2rem;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.buttonHover {
-  background-color: #0056b3;
-}
-
-.result {
-  font-size: 1.8rem;
-  margin-top: 20px;
-  color: #007bff;
-}
-
-/* BMI Category styles */
-.bmi-category {
-  font-size: 1.5rem;
-  margin-top: 10px;
-  font-weight: bold;
-}
-
-/* Style BMI categories with different colors */
-.underweight {
-  color: blue; /* Blue for Underweight */
-}
-
-.average {
-  color: green; /* Green for Average */
-}
-
-.overweight {
-  color: red; /* Red for Overweight */
-}
-```
-</details>
-
-## Step 4: Implement the `calculateBMI` Function
-
-In this step, we'll implement the `calculateBMI` function in the `app.js` file. This function calculates the BMI (Body Mass Index) based on the user's input for height, weight, and selected units (cm/kg or ft/lb). Additionally, it determines the BMI category and updates the state variables accordingly.
-
-**i.** The function begins by parsing the user's input for height and weight into floating-point numbers (h and w).
-
-**ii.** It then checks the selected unit (unit) to determine whether the user has chosen metric or imperial units.
-
-**iii.** If metric units are selected and valid height and weight inputs are provided, the BMI is calculated using the formula: weight (kg) / (height (m) * height (m)). The result is rounded to two decimal places.
-
-**iv.** Based on the calculated BMI value, the corresponding BMI category is determined and set using the setBMICategory function.
-
-**v.** If imperial units are selected and valid inputs are provided, the height is converted from feet to inches, and the BMI is calculated using the formula: (weight (lb) / (height (in) * height (in))) * 703.
-
-**vi.** Again, the BMI category is determined and set based on the calculated BMI value.
-
-**vii.** If any invalid input is detected (e.g., negative values or empty fields), the BMI and BMI category are reset to null and an empty string.
-
-
-**Solution:** Change the below code in `app.js` where you get the placeholder `Replace your calculateBMI function code here`
-
-
-<details>
-<Summary>Click to view the code</Summary>
+Open the `RecipeTile.js` file located at `src/components/RecipeTile.js` and add the following code:
 
 ```javascript
-const calculateBMI = () => {
-  const h = parseFloat(height);
-  const w = parseFloat(weight);
+import React from "react";
+import "../assets/css/RecipeTile.css";
 
-  if (unit === 'metric' && h > 0 && w > 0) {
-    const bmiValue = (w / ((h / 100) * (h / 100))).toFixed(2);
-    setBMI(bmiValue);
+export default function RecipeTile({ recipe }) {
+  // Regular expression to validate image URLs
+  const imageRegex = /\.(jpeg|jpg|gif|png)$/;
+  const isImageValid = recipe?.image?.match(imageRegex) !== null;
 
-    // Determine BMI category based on the calculated BMI
-    if (bmiValue <= 18.5) {
-      setBMICategory('Underweight');
-    } else if (bmiValue <= 24.9) {
-      setBMICategory('Average');
-    } else if (bmiValue <= 29.9) {
-      setBMICategory('Overweight');
-    } else if (bmiValue >= 30) {
-      setBMICategory('Obese');
-    } else {
-      setBMICategory('BMI');
-    }
-  } else if (unit === 'imperial' && h > 0 && w > 0) {
-    // Convert height from feet to inches
-    const heightInInches = h * 12;
-    const bmiValue = ((w / (heightInInches * heightInInches)) * 703).toFixed(2);
-    setBMI(bmiValue);
-
-    // Determine BMI category based on the calculated BMI
-    if (bmiValue <= 18.5) {
-      setBMICategory('Underweight');
-    } else if (bmiValue <= 24.9) {
-      setBMICategory('Average');
-    } else if (bmiValue <= 29.9) {
-      setBMICategory('Overweight');
-    } else if (bmiValue >= 30) {
-      setBMICategory('Obese');
-    } else {
-      setBMICategory('BMI');
-    }
-  } else {
-    // Handle invalid input (e.g., negative values or empty fields)
-    setBMI(null);
-    setBMICategory('');
-  }
-};
-```
-</details>
-
-## Step 5: Implement the `handleUnitChange` Function
-
-In this step, we'll implement the `handleUnitChange` function in the `app.js` file. This function is responsible for handling the change in units (from cm/kg to ft/lb or vice versa) when the user selects a different unit from the dropdown menu. It also resets the input fields, BMI result, and BMI category when the unit is changed.
-
-**i.** The function is triggered when the user selects a different unit from the dropdown menu (e.target.value contains the selected unit).
-
-**ii.** It updates the unit state variable with the newly selected unit.
-
-**iii.** The height and weight input fields are reset to empty strings using setHeight('') and setWeight(''), ensuring that any previous values are cleared.
-
-**iv.** The BMI result (bmi) is set to null using setBMI(null) to remove any previously calculated BMI value.
-**v.** The BMI category (bmiCategory) is also reset to an empty string using setBMICategory('') to clear any previous BMI category.
-
-**Solution:** Change the below code in `app.js` where you get the placeholder `Replace your handleUnitChange function code here`
-
-
-```javascript
-const handleUnitChange = (e) => {
-  // Handle unit change from the dropdown
-  setUnit(e.target.value);
-  setHeight(''); // Reset height input
-  setWeight(''); // Reset weight input
-  setBMI(null); // Reset BMI result
-  setBMICategory(''); // Reset BMI category
-};
+  return isImageValid ? (
+    // Create the structure for the recipe tile
+    <div className="recipeTile">
+      <img className="recipeTile__img" src={recipe?.image} alt={recipe?.label} />
+      <p className="recipeTile__name">{recipe?.label}</p>
+    </div>
+  ) : null;
+}
 ```
 
-## Step 6: Finalize the `app.js` File
+## Step 5: Complete RecipeDetails.js
 
-In this step, we'll provide the complete `app.js` file that incorporates all the previous steps' solutions. This file contains the entire React component for the BMI Calculator, including the state variables, user interface elements, event handlers, and the BMI calculation logic.
+In this step, we will complete the `RecipeDetails.js` component to render the detailed information of a recipe. This component will display the recipe's image, label, cuisine type, meal type, ingredients, and category.
 
+### RecipeDetails.js
 
-<details>
-<Summary>Click to view the code</Summary>
+Open the `RecipeDetails.js` file located at `src/components/RecipeDetails.js` and add the following code:
 
 ```javascript
-import React, { useState } from 'react';
-import './App.css';
+import React from "react";
+import '../assets/css/RecipeDetails.css';
 
-function App() {
-  const [height, setHeight] = useState('');
-  const [weight, setWeight] = useState('');
-  const [unit, setUnit] = useState('metric'); // Default to metric
-  const [bmi, setBMI] = useState(null);
-  const [bmiCategory, setBMICategory] = useState('');
-
-  const calculateBMI = () => {
-    const h = parseFloat(height);
-    const w = parseFloat(weight);
-  
-    if (unit === 'metric' && h > 0 && w > 0) {
-      const bmiValue = (w / ((h / 100) * (h / 100))).toFixed(2);
-      setBMI(bmiValue);
-  
-      // Determine BMI category based on the calculated BMI
-      if (bmiValue <= 18.5) {
-        setBMICategory('Underweight');
-      } else if (bmiValue <= 24.9) {
-        setBMICategory('Average');
-      } else if (bmiValue <= 29.9) {
-        setBMICategory('Overweight');
-      } else if (bmiValue >= 30) {
-        setBMICategory('Obese');
-      } else {
-        setBMICategory('BMI');
-      }
-    } else if (unit === 'imperial' && h > 0 && w > 0) {
-      // Convert height from feet to inches
-      const heightInInches = h * 12;
-      const bmiValue = ((w / (heightInInches * heightInInches)) * 703).toFixed(2);
-      setBMI(bmiValue);
-  
-      // Determine BMI category based on the calculated BMI
-      if (bmiValue <= 18.5) {
-        setBMICategory('Underweight');
-      } else if (bmiValue <= 24.9) {
-        setBMICategory('Average');
-      } else if (bmiValue <= 29.9) {
-        setBMICategory('Overweight');
-      } else if (bmiValue >= 30) {
-        setBMICategory('Obese');
-      } else {
-        setBMICategory('BMI');
-      }
-    } else {
-      // Handle invalid input (e.g., negative values or empty fields)
-      setBMI(null);
-      setBMICategory('');
-    }
-  };
-
-  const handleUnitChange = (e) => {
-    // Handle unit change from the dropdown
-    setUnit(e.target.value);
-    setHeight(''); // Reset height input
-    setWeight(''); // Reset weight input
-    setBMI(null); // Reset BMI result
-    setBMICategory(''); // Reset BMI category
-  };
-
+export default function RecipeDetails({ recipe }) {
   return (
-    <div className="container">
-      <div className="appContainer">
-        <h1 className="heading">BMI Calculator</h1>
-        <div className="input-container">
-        <div className="unit-select">
-            <label className="label">Select Units:</label>
-            <select
-              value={unit}
-              onChange={handleUnitChange}
-              className="unit-dropdown"
-            >
-              <option value="metric" className='unit-option'>cm/kg</option>
-              <option value="imperial">ft/lb</option>
-            </select>
-          </div>
-          <label className="label">
-            Height ({unit === 'metric' ? 'CM' : 'FT'}):
-            <input
-              type="text"
-              value={height}
-              onChange={(e) => setHeight(e.target.value)}
-              className="input"
-              placeholder={`Enter height (${unit === 'metric' ? 'CM' : 'FT'})`}
-            />
-          </label>
-          <label className="label">
-            Weight ({unit === 'metric' ? 'KG' : 'LB'}):
-            <input
-              type="text"
-              value={weight}
-              onChange={(e) => setWeight(e.target.value)}
-              className="input"
-              placeholder={`Enter weight (${unit === 'metric' ? 'KG' : 'LB'})`}
-            />
-          </label>
-          
+    // Define the structure to display the recipe details
+    <div className="recipe-details">
+      <div className="recipe-details-content">
+        <div className="recipe-details-left">
+          <img src={recipe.image} alt={recipe.label} />
         </div>
-        <button
-          onClick={calculateBMI}
-          className={`button ${bmi ? 'buttonHover' : ''}`}
-        >
-          Calculate BMI
-        </button>
-        {bmi !== null && (
-          <div className="result">
-            <h2>Your BMI: {bmi}</h2>
-            <p className={`bmi-category ${bmiCategory.toLowerCase()}`}>
-              Your BMI Category: {bmiCategory}
-            </p>
-          </div>
-        )}
+        <div className="recipe-details-right">
+          <h2>{recipe.label}</h2>
+          <p>Cuisine Type: {recipe.cuisineType.join(", ")}</p>
+          <p>Meal Type: {recipe.mealType.join(", ")}</p>
+          <p>Ingredients: {recipe.ingredients.join(", ")}</p>
+          <p>Category: {recipe.category.join(", ")}</p>
+        </div>
+      </div>
+      <div className="recipe-details-method">
+        <img src={recipe.method} alt={recipe.label} className="recipe-image" />
       </div>
     </div>
   );
 }
-
-export default App;
 ```
-</details>
+
+## Step 6: Import Components and Data into App.js
+
+In this step, we will import the necessary components and recipe data into the `App.js` file, which is the main component of your Foodie Delights Recipe Application.
+
+### App.js
+
+Open the `App.js` file located at the root of your project and add the following import statements at the top of the file:
+
+```javascript
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
+import "./assets/css/App.css";
+import RecipeTile from "./components/RecipeTile"; // Import RecipeTile component
+import RecipeDetails from "./components/RecipeDetails"; // Import RecipeDetails component
+import recipesData from "./data/recipes.json"; // Import recipeData from JSON file
+```
+
 
 ## Launch and view your react app on the browser
 

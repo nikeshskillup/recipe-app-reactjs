@@ -22,3 +22,4 @@ export default function RecipeDetails({ recipe }) {
     </div>
   );
 }
+
