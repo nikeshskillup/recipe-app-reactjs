@@ -369,7 +369,7 @@ Follow these steps to launch, view, and test your Foodie Delights Recipe App in 
    npm start
    ```
 
-# Test the App
+## Test the App
 
 To ensure that your Foodie Delights Recipe App functions as expected, follow these steps to test its various features:
 
@@ -381,7 +381,7 @@ To ensure that your Foodie Delights Recipe App functions as expected, follow the
    - Use the category filter to test filtering by different categories.
    - Select different categories to filter the recipes accordingly and observe the results.
 
-# Recipe Details
+## Recipe Details
 
 After performing a search and filtering by categories, you can access detailed information about a specific recipe by following these steps:
 
