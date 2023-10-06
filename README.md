@@ -353,27 +353,16 @@ import RecipeDetails from "./components/RecipeDetails"; // Import RecipeDetails 
 import recipesData from "./data/recipes.json"; // Import recipeData from JSON file
 ```
 
+## Launch, View, and Test Your Foodie Delights Recipe App
 
-## Launch and view your react app on the browser
+Follow these steps to launch, view, and test your Foodie Delights Recipe App in a web browser:
 
-1. Make sure you are in the react-app-bmi-calculator directory and start the server by executing the following command.
+1. **Navigate to Your Project Directory**: Open your terminal or command prompt and make sure you are in the directory where your Foodie Delights Recipe App project is located.
 
-```
-    npm start
-```
+2. **Start the Development Server**: Start the development server by executing the following command in your terminal:
 
-2. Once you execute the above command the server will start and can be launched in the default browser using port 3000 as shown in the screenshot below.
-
-<img src="images/bmi-result.png" width="75%"/>
-
-The BMI Calculator application should now be accessible in your web browser.
-
-3. Enter your height in either centimeters (CM) or feet (FT) depending on the selected unit, and your weight in either kilograms (KG) or pounds (LB) depending on the selected unit.
-
-Click on the "Calculate BMI" button to see the result.
-
-<img src="images/app-test.png" width="75%"/>
-
+   ```bash
+   npm start
 
 
 ## Commit and push your local code to your remote git repository
