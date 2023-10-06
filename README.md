@@ -136,7 +136,7 @@ In the `app.js` file, we define the user interface (UI) components required for 
 **Solution:** Replace the following placeholder code in `app.js` with your UI components:
 
 ```javascript
-        // Step 2: Create UI Components 
+// Step 2: Create UI Components 
 <Router>
 <div className="app">
   {/* Header */}
