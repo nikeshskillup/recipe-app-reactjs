@@ -8,10 +8,11 @@ import RecipeDetails from "./components/RecipeDetails";
 import recipesData from "./data/recipes.json";
 
 function App() {
-  const [query, setQuery] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("All");
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [query, setQuery] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  
 
   useEffect(() => {
     // Simulate a fetch request with a delay

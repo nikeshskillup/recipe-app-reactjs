@@ -1,27 +1,27 @@
 
-# Body Mass Index (BMI) Calculator Application
+# Foodie Delights - Recipe Application
 
 ## Estimated Time: 60 minutes
 
-Build a BMI (Body Mass Index) Calculator React Application to help users assess their physical health by inputting height and weight. Calculate the BMI and display its category, enabling users to monitor their health conveniently.
+Develop a Foodie Delights Recipe App for users to easily find, save, and explore diverse recipes based on ingredients and dietary preferences. Simplify cooking and meal planning with this convenient and delicious recipe app.
 
 ## Objectives:
 
 By the end of this lab, you will have achieved the following:
 
-**1.** Established a React project.
+**1.** Created a React-based project for the Foodie Delights Recipe Application.
 
-**2.** Developed a user-friendly BMI Calculator application.
+**2.** Developed a user-friendly and intuitive recipe browsing and management system.
 
-**3.** Effectively managed data, including height, weight, BMI, and category, using `useState`.
+**3.** Efficiently managed recipe data, including ingredients, dietary information, and instructions, utilizing React's state management (e.g., `useState`).
 
-**4.** Implemented interactive features for user engagement, such as BMI calculation.
+**4.** Implemented interactive features for users to browse, search, and save recipes for an engaging experience.
 
-**5.** Enhanced the app's appearance with stylish CSS.
+**5.** Enhanced the application's visual appeal and user experience through well-designed CSS styles.
 
-**6.** Conducted testing within a web browser.
+**6.** Ensured cross-browser compatibility and conducted thorough testing to deliver a reliable web application.
 
-**7.** Employed Git for version control and collaborative work.
+**7.** Employed Git for version control, facilitating collaboration and maintaining a structured codebase for the Foodie Delights Recipe Application.
 
 ## Exercise 1: Setup a React Project
 
@@ -68,7 +68,7 @@ ls
 **8.** Change to the project directory and check the project structure and files within it, using the below command.
 
 ```bash
-cd react-app-bmi-calculator && ls
+cd react-recipe-app && ls
 ```
 
 **9.** All packages required to be installed are listed in the file `package.json`. Execute the command given below, to save and install the packages.
@@ -77,63 +77,57 @@ cd react-app-bmi-calculator && ls
 npm install -s
 ```
 
-**10.** The folder structure of the BMI Calculator Application should be similar to the structure shown in the screenshot below. 
+**10.** The folder structure of the react-recipe-app should be similar to the structure shown in the screenshot below. 
 
 <img src="images/file-explorer.png" width=200/>
 
 
 ## Exercise 2: Place the UI Components
 
-The UI of the BMI Calculator Application that you will create in this lab will be similar to the images shown below.
+The UI of the Foodie Delights - Recipe Application that you will create in this lab will be similar to the images shown below.
 
 <img src="images/bmi-app-1.png" width="75%"/>
 
 <img src="images/bmi-app-2.png" width="75%"/>
 
-## Note:
+## Features:
 
-**i.** Calculate BMI in both metric (kg/cm) and imperial (ft/lb) units.
+In this project, you will harness the capabilities of React.js to craft the Foodie Delights Recipe Application, a dynamic platform for discovering and exploring diverse recipes.
 
-**ii.** Determine BMI category (underweight, average, overweight, or obese).
+React.js empowers you to manage state, handle events, and render dynamic UI elements, making it the ideal framework for building this interactive and engaging culinary application.
 
-**iii.** Responsive design for various screen sizes.
+**i.** Create a robust search functionality allowing users to find recipes based on ingredient input and filter recipes by category.
 
-**iv.** User-friendly interface with input validation.
+**ii.** Implement a detailed recipe view that showcases step-by-step instructions, ingredients, and additional information.
 
-In this project, you will leverage the power of React.js to create the BMI Calculator Application with two measuring units cm/kg and ft/lb.
+**iii.** Design a responsive user interface that adapts seamlessly to various screen sizes and devices.
 
-React.js facilitates the management of state, UI rendering, and event handling, making it an ideal choice for building interactive and dynamic web applications.
+**iv.** Enhance user experience through input validation, ensuring accurate and reliable search results.
 
-## Create the BMICalculator Component
+
+## Create the Foodie Delights - Recipe App Component
 
 ## Step 1: Declare Required `useState` Variables
 
-In the `app.js` file, we begin by declaring the necessary `useState` variables to manage the state of our BMI Calculator. These variables are used to store the user's input for height, weight, selected unit, calculated BMI, and the corresponding BMI category.
+In the `app.js` file, we begin by declaring the necessary `useState` variables to manage the state of our Foodie Delights Recipe Application. These variables are used to store important data and manage the application's functionality.
 
-**i.** `height` and `setHeight`: These variables manage the user's input for height.
+**i.** `recipes` and `setRecipes`: These variables manage the state of recipes data and allow us to update it as needed.
 
-**ii.** `weight` and `setWeight`: These variables manage the user's input for weight.
+**ii.** `loading` and `setLoading`: These variables help us manage the loading state of the application, ensuring a smooth user experience.
 
-**iii.** `unit` and `setUnit`: These variables manage the selected unit (metric or imperial) for height and weight inputs. The default unit is set to "metric."
+**iii.** `query` and `setQuery`: These variables store and update the user's input for recipe search.
 
-**iv.** `bmi` and `setBMI`: These variables store the calculated BMI value.
+**iv.** `selectedCategory` and `setSelectedCategory`: These variables track the user's selected category filter for recipe search.
 
-**v.** `bmiCategory` and `setBMICategory`: These variables store the corresponding BMI category based on the calculated BMI value.
-
-**Solution:** Change the below code in `app.js` where you get the placeholder `"Declare Required useState Variables`
-
-<details>
-<Summary>Click to view the code</Summary>
+**Solution:** Replace the following placeholder code in `app.js`:
 
 ```javascript
-const [height, setHeight] = useState('');
-const [weight, setWeight] = useState('');
-const [unit, setUnit] = useState('metric'); // Default to metric
-const [bmi, setBMI] = useState(null);
-const [bmiCategory, setBMICategory] = useState('');
+// Initialize required state for recipes and loading
+  const [recipes, setRecipes] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [query, setQuery] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("All");
 ```
-</details>
-
 
 ## Step 2: Create UI Components
 
