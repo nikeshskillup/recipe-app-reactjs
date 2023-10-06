@@ -213,7 +213,7 @@ In the `app.js` file, we define the user interface (UI) components required for 
 
 In this step, we will create the necessary functions used in the UI components to filter and manage the recipe data based on user input. These functions are essential for enabling users to search for recipes and filter them by category.
 
-# 1. Load Recipes Data
+### 1. Load Recipes Data
 
 We will begin by simulating the loading of recipe data using a `setTimeout`. This will initialize the application with sample recipe data and set the loading state to `false` once the data is loaded.
 
@@ -226,7 +226,7 @@ useEffect(() => {
 }, []);
 ```
 
-# 2. Generate Options for Filtering Recipes by Category
+### 2. Generate Options for Filtering Recipes by Category
 
 Next, we'll generate options for filtering recipes by category. We collect unique categories from the recipe data and include an "All" option for displaying all recipes.
 
@@ -238,7 +238,7 @@ const healthLabelsOptions = Array.from(
 const categoryOptions = ["All", ...healthLabelsOptions];
 ```
 
-# 3. Function to Filter Recipes Based on Query and Category
+ 3. Function to Filter Recipes Based on Query and Category
 
 We'll create a function to filter recipes based on the user's input query and selected category. This function creates a copy of the original data, applies filters, and updates the displayed recipes.
 
