@@ -209,6 +209,74 @@ In the `app.js` file, we define the user interface (UI) components required for 
 </Router>
 ```
 
+## Step 3: Implement Required Functions for Filtering Recipes
+
+In this step, we will create the necessary functions used in the UI components to filter and manage the recipe data based on user input. These functions are essential for enabling users to search for recipes and filter them by category.
+
+# 1. Load Recipes Data
+
+We will begin by simulating the loading of recipe data using a `setTimeout`. This will initialize the application with sample recipe data and set the loading state to `false` once the data is loaded.
+
+```javascript
+useEffect(() => {
+  setTimeout(() => {
+    setRecipes(recipesData);
+    setLoading(false);
+  }, 1500);
+}, []);
+```
+
+# 2. Generate Options for Filtering Recipes by Category
+
+Next, we'll generate options for filtering recipes by category. We collect unique categories from the recipe data and include an "All" option for displaying all recipes.
+
+```javascript
+const healthLabelsOptions = Array.from(
+  new Set(recipesData.flatMap((recipe) => recipe.category))
+);
+
+const categoryOptions = ["All", ...healthLabelsOptions];
+```
+
+# 3. Function to Filter Recipes Based on Query and Category
+
+We'll create a function to filter recipes based on the user's input query and selected category. This function creates a copy of the original data, applies filters, and updates the displayed recipes.
+
+```javascript
+const filterRecipes = () => {
+  let filteredRecipes = [...recipesData];
+
+  if (selectedCategory !== "All") {
+    filteredRecipes = filteredRecipes.filter((recipe) =>
+      recipe.category.includes(selectedCategory)
+    );
+  }
+
+  if (query.trim() !== "") {
+    filteredRecipes = filteredRecipes.filter((recipe) =>
+      recipe.label.toLowerCase().includes(query.toLowerCase())
+    );
+  }
+
+  setRecipes(filteredRecipes);
+};
+```
+# 4. Handle Form Submission to Trigger Filtering
+
+Finally, we handle form submission to trigger the filtering process. This function prevents the default form submission behavior and calls the filterRecipes function to update the displayed recipes based on the user's input.
+
+```javascript
+const onSubmit = (e) => {
+  e.preventDefault();
+  filterRecipes();
+};
+
+```
+
+
+
+
+
 ## Step 3: Verify Style in `src/App.css` for the UI
 
 Please verify your 'src/app.css' file for the CSS styles. If you cannot find the CSS styles in the file, you can utilize the following code within the 'app.css' file
