@@ -358,11 +358,39 @@ import recipesData from "./data/recipes.json"; // Import recipeData from JSON fi
 Follow these steps to launch, view, and test your Foodie Delights Recipe App in a web browser:
 
 1. **Navigate to Your Project Directory**: Open your terminal or command prompt and make sure you are in the directory where your Foodie Delights Recipe App project is located.
+  ```bash
+  cd react-recipe-app
+  ```
+
 
 2. **Start the Development Server**: Start the development server by executing the following command in your terminal:
 
    ```bash
    npm start
+   ```
+
+# Test the App
+
+To ensure that your Foodie Delights Recipe App functions as expected, follow these steps to test its various features:
+
+1. **Search Functionality**:
+   - Enter 'Apple' in the input box.
+   - Click the "Search" button to test the search functionality.
+
+2. **Category Filtering**:
+   - Use the category filter to test filtering by different categories.
+   - Select different categories to filter the recipes accordingly and observe the results.
+
+# Recipe Details
+
+After performing a search and filtering by categories, you can access detailed information about a specific recipe by following these steps:
+
+1. **View Recipe Details**:
+   - After performing a search or applying category filters, click on any recipe tile to view its detailed information.
+   - Explore the recipe's details, including its image, label, cuisine type, meal type, ingredients, and category.
+
+By following these steps, you can thoroughly test the search functionality, category filtering, and recipe details in your Foodie Delights Recipe App to ensure that it works seamlessly and provides a delightful user experience.
+
 
 
 ## Commit and push your local code to your remote git repository
