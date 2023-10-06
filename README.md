@@ -131,69 +131,80 @@ In the `app.js` file, we begin by declaring the necessary `useState` variables t
 
 ## Step 2: Create UI Components
 
-In the `app.js` file, we define the user interface (UI) components required for the BMI Calculator. These components include input fields for height and weight, a dropdown to select units (cm/kg or ft/lb), a button to trigger the BMI calculation, and elements to display the calculated BMI and BMI category.
+In the `app.js` file, we define the user interface (UI) components required for the Foodie Delights Recipe Application. These components include the search input field, category filter dropdown, and elements to display recipe results.
 
-**Solution:** Change the below code in `app.js` where you get the placeholder `Replace your UI Componentes code here`
+**Solution:** Replace the following placeholder code in `app.js` with your UI components:
 
-<details>
-<Summary>Click to view the code</Summary>
-
-```jsx
-<div className="container">
-  <div className="appContainer">
-    <h1 className="heading">BMI Calculator</h1>
-    <div className="input-container">
-    <div className="unit-select">
-        <label className="label">Select Units:</label>
-        <select
-          value={unit}
-          onChange={handleUnitChange}
-          className="unit-dropdown"
-        >
-          <option value="metric" className='unit-option'>cm/kg</option>
-          <option value="imperial">ft/lb</option>
-        </select>
-      </div>s
-      <label className="label">
-        Height ({unit === 'metric' ? 'CM' : 'FT'}):
-        <input
-          type="text"
-          value={height}
-          onChange={(e) => setHeight(e.target.value)}
-          className="input"
-          placeholder={`Enter height (${unit === 'metric' ? 'CM' : 'FT'})`}
-        />
-      </label>
-      <label className="label">
-        Weight ({unit === 'metric' ? 'KG' : 'LB'}):
-        <input
-          type="text"
-          value={weight}
-          onChange={(e) => setWeight(e.target.value)}
-          className="input"
-          placeholder={`Enter weight (${unit === 'metric' ? 'KG' : 'LB'})`}
-        />
-      </label>
-      
-    </div>
-    <button
-      onClick={calculateBMI}
-      className={`button ${bmi ? 'buttonHover' : ''}`}
-    >
-      Calculate BMI
-    </button>
-    {bmi !== null && (
-      <div className="result">
-        <h2>Your BMI: {bmi}</h2>
-        <p className={`bmi-category ${bmiCategory.toLowerCase()}`}>
-          Your BMI Category: {bmiCategory}
-        </p>
-      </div>
-    )}
+```javascript
+<div className="app">
+  {/* Header */}
+  <div className="app_header">
+    <Link to="/" className="linktext">
+      <h1>🍴 Foodie Delights 🍣</h1>
+    </Link>
   </div>
+  
+  {/* Search Form */}
+  <p>Search Your Recipe Here:</p>
+  <form className="app__searchForm" onSubmit={onSubmit}>
+    <input
+      className="app__input"
+      type="text"
+      placeholder="Enter Ingredient"
+      autoComplete="off"
+      value={query}
+      onChange={(e) => setQuery(e.target.value)}
+    />
+    <input className="app__submit" type="submit" value="Search" />
+    <select
+      className="app__category"
+      value={selectedCategory}
+      onChange={(e) => setSelectedCategory(e.target.value)}
+    >
+      {categoryOptions.map((category) => (
+        <option key={category} value={category}>
+          {category}
+        </option>
+      ))}
+    </select>
+  </form>
+
+  {/* Recipe Results */}
+  {loading ? (
+    <p>Loading...</p>
+  ) : (
+    <div className="app__recipes">
+      {recipes.length !== 0 ? (
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <div className="recipe-grid">
+                {recipes.map((recipe) => (
+                  <Link
+                    className="linktext"
+                    key={recipe.label}
+                    to={`/recipe/${encodeURIComponent(recipe.label)}`}
+                  >
+                    <RecipeTile recipe={recipe} />
+                  </Link>
+                ))}
+              </div>
+            }
+          />
+
+          <Route
+            path="/recipe/:label"
+            element={<RecipeDetailsWrapper recipes={recipes} />}
+          />
+        </Routes>
+      ) : (
+        <p>No recipes found.</p>
+      )}
+    </div>
+  )}
 </div>
 ```
-</details>
 
 ## Step 3: Verify Style in `src/App.css` for the UI
 
