@@ -261,7 +261,7 @@ const filterRecipes = () => {
   setRecipes(filteredRecipes);
 };
 ```
-# 4. Handle Form Submission to Trigger Filtering
+### 4. Handle Form Submission to Trigger Filtering
 
 Finally, we handle form submission to trigger the filtering process. This function prevents the default form submission behavior and calls the filterRecipes function to update the displayed recipes based on the user's input.
 
