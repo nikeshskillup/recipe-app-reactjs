@@ -86,7 +86,7 @@ npm install -s
 
 The UI of the Foodie Delights - Recipe Application that you will create in this lab will be similar to the inst-img shown below.
 
-<img src="inst-img/recipe-app-ui.png" width="75%"/>
+<img src="/inst-img/recipe-app-ui.png" width="75%"/>
 
 
 ## Features:
