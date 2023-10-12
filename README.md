@@ -35,21 +35,21 @@ which has the partially developed code for this react project.
 *You will need to have a github account of your own to do so.*
 *If you dont already have one, please refer to the [link](https://github.com/) to create a new GitHub Account by following the instructions.*
 
-<img src="inst-img/Fork-repo.png" width="75%"/> 
+<img src="./public/inst-img/Fork-repo.png" width="75%"/> 
 
 **3.** Go to your forked repository and copy the url to clone your repo in the local workspace.
 
-<img src="inst-img/repo-url.png" width="75%"/> 
+<img src="./public/inst-img/repo-url.png" width="75%"/> 
 
 **4.** In the Visual studio code, Open a terminal window by using the menu in the editor: Terminal > New Terminal.
 
-<img src="inst-img/vs-code-starting-img.png" width="75%"> 
+<img src="./public/inst-img/vs-code-starting-img.png" width="75%"> 
 
-<img src="inst-img/new-terminal.png" width="75%"/> 
+<img src="./public/inst-img/new-terminal.png" width="75%"/> 
 
 **5.** Modify the directory location where you intend to store your project in your local workspace, as demonstrated below.
 
-<img src="inst-img/cd.png" width="75%"/> 
+<img src="./public/inst-img/cd.png" width="75%"/> 
 
 **6.** Clone the forked repository by running the command given below: 
 
@@ -57,7 +57,7 @@ which has the partially developed code for this react project.
 git clone <your_repo_name>
 ```
 
-<img src="inst-img/git-clone.png" width="75%"/> 
+<img src="./public/inst-img/git-clone.png" width="75%"/> 
 
 **7.** This will clone the repository with BMI Calculator application files in your home directory in the Visual Studio Code. You can check the source folder created by using the below command.
 
@@ -79,14 +79,14 @@ npm install -s
 
 **10.** The folder structure of the react-recipe-app should be similar to the structure shown in the screenshot below. 
 
-<img src="inst-img/file-explorer.png" width=200/>
+<img src="./public/inst-img/file-explorer.png" width=200/>
 
 
 ## Exercise 2: Place the UI Components
 
-The UI of the Foodie Delights - Recipe Application that you will create in this lab will be similar to the inst-img shown below.
+The UI of the Foodie Delights - Recipe Application that you will create in this lab will be similar to the image shown below.
 
-<img src="./inst-img/recipe-app-ui.png" width="75%"/>
+<img src="./public/inst-img/recipe-app-ui.png" width="75%"/>
 
 
 ## Features:
@@ -375,13 +375,13 @@ To ensure that your Foodie Delights Recipe App functions as expected, follow the
 1. **Search Functionality**:
    - Enter 'Apple' in the input box.
    - Click the "Search" button to test the search functionality.
-<img src="inst-img/search-apple.png" width="75%"/>
+<img src="./public/inst-img/search-apple.png" width="75%"/>
 
 
 2. **Category Filtering**:
    - Use the category filter to test filtering by different categories.
    - Select different categories to filter the recipes accordingly and observe the results.
-<img src="inst-img/search-filter.png" width="75%"/>
+<img src="./public/inst-img/search-filter.png" width="75%"/>
 
 
 ## Recipe Details
